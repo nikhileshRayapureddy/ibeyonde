@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178FECE6ACF0A809B072DB45 /* Pods_ibeyonde.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */; };
 		A74AAE962014F84500A6273C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE942014F84500A6273C /* Main.storyboard */; };
 		A74AAE992014F84500A6273C /* ibeyonde.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A74AAE972014F84500A6273C /* ibeyonde.xcdatamodeld */; };
 		A74AAE9B2014F84500A6273C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE9A2014F84500A6273C /* Assets.xcassets */; };
@@ -33,9 +34,12 @@
 		A74AAEDB2014FA1400A6273C /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AAEC22014FA1300A6273C /* IQToolbar.swift */; };
 		A74AAEDC2014FA1400A6273C /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AAEC32014FA1300A6273C /* IQUIView+IQKeyboardToolbar.swift */; };
 		A74AAEDD2014FA1400A6273C /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A74AAEC52014FA1300A6273C /* IQKeyboardManager.bundle */; };
+		A74AAEE02014FCB000A6273C /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AAEDF2014FCB000A6273C /* HttpRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibeyonde.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde.release.xcconfig"; sourceTree = "<group>"; };
+		897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibeyonde.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74AAE8D2014F84500A6273C /* ibeyonde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibeyonde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74AAE952014F84500A6273C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A74AAE982014F84500A6273C /* ibeyonde.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ibeyonde.xcdatamodel; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		A74AAEC22014FA1300A6273C /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		A74AAEC32014FA1300A6273C /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		A74AAEC52014FA1300A6273C /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		A74AAEDF2014FCB000A6273C /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibeyonde.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +78,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178FECE6ACF0A809B072DB45 /* Pods_ibeyonde.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34473A565BCFD110FF3633E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58AA45215E063EFAF49AB3FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */,
+				686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A74AAE842014F84500A6273C = {
 			isa = PBXGroup;
 			children = (
 				A74AAE8F2014F84500A6273C /* ibeyonde */,
 				A74AAE8E2014F84500A6273C /* Products */,
+				58AA45215E063EFAF49AB3FD /* Pods */,
+				34473A565BCFD110FF3633E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +162,7 @@
 		A74AAEAA2014FA1300A6273C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A74AAEDE2014FCB000A6273C /* ServiceCallHelpers */,
 				A74AAEAB2014FA1300A6273C /* FloatLabelTextField.swift */,
 				A74AAEAC2014FA1300A6273C /* FloatLabelTextView.swift */,
 				A74AAEAD2014FA1300A6273C /* iBeyondeUserDefaults.swift */,
@@ -209,6 +236,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A74AAEDE2014FCB000A6273C /* ServiceCallHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				A74AAEDF2014FCB000A6273C /* HttpRequest.swift */,
+			);
+			path = ServiceCallHelpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A74AAEA22014F84500A6273C /* Build configuration list for PBXNativeTarget "ibeyonde" */;
 			buildPhases = (
+				F3DE77CB1513F5FD4DA9039F /* [CP] Check Pods Manifest.lock */,
 				A74AAE892014F84500A6273C /* Sources */,
 				A74AAE8A2014F84500A6273C /* Frameworks */,
 				A74AAE8B2014F84500A6273C /* Resources */,
+				051EADF416B6F16D67483B12 /* [CP] Embed Pods Frameworks */,
+				1499D4D173211731109DA376 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,6 +315,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		051EADF416B6F16D67483B12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1499D4D173211731109DA376 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3DE77CB1513F5FD4DA9039F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A74AAE892014F84500A6273C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -295,6 +381,7 @@
 				A74AAED52014FA1400A6273C /* IQKeyboardManager.swift in Sources */,
 				A74AAEDA2014FA1400A6273C /* IQTitleBarButtonItem.swift in Sources */,
 				A74AAED12014FA1400A6273C /* IQUIViewController+Additions.swift in Sources */,
+				A74AAEE02014FCB000A6273C /* HttpRequest.swift in Sources */,
 				A74AAEC82014FA1400A6273C /* AppDelegate.swift in Sources */,
 				A74AAE992014F84500A6273C /* ibeyonde.xcdatamodeld in Sources */,
 				A74AAED62014FA1400A6273C /* IQKeyboardReturnKeyHandler.swift in Sources */,
@@ -438,6 +525,7 @@
 		};
 		A74AAEA32014F84500A6273C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +541,7 @@
 		};
 		A74AAEA42014F84500A6273C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
