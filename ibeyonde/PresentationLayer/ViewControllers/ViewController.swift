@@ -8,11 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
+    @IBOutlet weak var btnLiveHD: UIButton!
+    @IBOutlet weak var btnHistory: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.designNavigationBar(isBack: false)
+        btnLiveHD.layer.cornerRadius = 5
+        btnLiveHD.layer.masksToBounds = true
+        
+        btnHistory.layer.cornerRadius = 5
+        btnHistory.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
