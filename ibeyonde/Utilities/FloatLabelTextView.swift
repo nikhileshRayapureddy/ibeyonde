@@ -29,7 +29,7 @@ import UIKit
 		}
 	}
 	
-	var titleFont:UIFont = UIFont.myridFontOfSize(size: 18) {
+    var titleFont:UIFont = UIFont.systemFont(ofSize: 18, weight: .regular) {
 		didSet {
 			title.font = titleFont
 		}

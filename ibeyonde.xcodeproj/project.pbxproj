@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		178FECE6ACF0A809B072DB45 /* Pods_ibeyonde.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */; };
+		A7224BCC2015BAA500F0A59D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BCB2015BAA500F0A59D /* BaseViewController.swift */; };
+		A7224BCE2015BCA000F0A59D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BCD2015BCA000F0A59D /* HistoryViewController.swift */; };
+		A7224BD22015CD9000F0A59D /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD02015CD9000F0A59D /* HistoryCollectionViewCell.swift */; };
+		A7224BD32015CD9000F0A59D /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */; };
+		A7224BD72015F86900F0A59D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD62015F86900F0A59D /* LoginViewController.swift */; };
+		A7224BD92015F87600F0A59D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD82015F87600F0A59D /* RegistrationViewController.swift */; };
 		A74AAE962014F84500A6273C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE942014F84500A6273C /* Main.storyboard */; };
 		A74AAE992014F84500A6273C /* ibeyonde.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A74AAE972014F84500A6273C /* ibeyonde.xcdatamodeld */; };
 		A74AAE9B2014F84500A6273C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE9A2014F84500A6273C /* Assets.xcassets */; };
@@ -40,6 +46,12 @@
 /* Begin PBXFileReference section */
 		686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibeyonde.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde.release.xcconfig"; sourceTree = "<group>"; };
 		897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibeyonde.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7224BCB2015BAA500F0A59D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A7224BCD2015BCA000F0A59D /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		A7224BD02015CD9000F0A59D /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		A7224BD62015F86900F0A59D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A7224BD82015F87600F0A59D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A74AAE8D2014F84500A6273C /* ibeyonde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibeyonde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74AAE952014F84500A6273C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A74AAE982014F84500A6273C /* ibeyonde.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ibeyonde.xcdatamodel; sourceTree = "<group>"; };
@@ -102,6 +114,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A7224BCF2015CD7300F0A59D /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				A7224BD02015CD9000F0A59D /* HistoryCollectionViewCell.swift */,
+				A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		A74AAE842014F84500A6273C = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +167,7 @@
 		A74AAEA72014FA1300A6273C /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				A7224BCF2015CD7300F0A59D /* CustomCells */,
 				A74AAEA82014FA1300A6273C /* ViewControllers */,
 			);
 			path = PresentationLayer;
@@ -155,6 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				A74AAEA92014FA1300A6273C /* ViewController.swift */,
+				A7224BCB2015BAA500F0A59D /* BaseViewController.swift */,
+				A7224BCD2015BCA000F0A59D /* HistoryViewController.swift */,
+				A7224BD62015F86900F0A59D /* LoginViewController.swift */,
+				A7224BD82015F87600F0A59D /* RegistrationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -279,7 +305,7 @@
 				TargetAttributes = {
 					A74AAE8C2014F84500A6273C = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -306,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7224BD32015CD9000F0A59D /* HistoryCollectionViewCell.xib in Resources */,
 				A74AAE9E2014F84500A6273C /* LaunchScreen.storyboard in Resources */,
 				A74AAE9B2014F84500A6273C /* Assets.xcassets in Resources */,
 				A74AAEDD2014FA1400A6273C /* IQKeyboardManager.bundle in Resources */,
@@ -368,11 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7224BD72015F86900F0A59D /* LoginViewController.swift in Sources */,
 				A74AAECD2014FA1400A6273C /* IQNSArray+Sort.swift in Sources */,
 				A74AAED42014FA1400A6273C /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				A74AAED72014FA1400A6273C /* IQTextView.swift in Sources */,
+				A7224BD22015CD9000F0A59D /* HistoryCollectionViewCell.swift in Sources */,
 				A74AAED92014FA1400A6273C /* IQPreviousNextView.swift in Sources */,
 				A74AAEC92014FA1400A6273C /* ViewController.swift in Sources */,
+				A7224BCC2015BAA500F0A59D /* BaseViewController.swift in Sources */,
 				A74AAED32014FA1400A6273C /* IQKeyboardManagerConstants.swift in Sources */,
 				A74AAECB2014FA1400A6273C /* FloatLabelTextView.swift in Sources */,
 				A74AAED22014FA1400A6273C /* IQUIWindow+Hierarchy.swift in Sources */,
@@ -380,8 +410,10 @@
 				A74AAEDB2014FA1400A6273C /* IQToolbar.swift in Sources */,
 				A74AAED52014FA1400A6273C /* IQKeyboardManager.swift in Sources */,
 				A74AAEDA2014FA1400A6273C /* IQTitleBarButtonItem.swift in Sources */,
+				A7224BCE2015BCA000F0A59D /* HistoryViewController.swift in Sources */,
 				A74AAED12014FA1400A6273C /* IQUIViewController+Additions.swift in Sources */,
 				A74AAEE02014FCB000A6273C /* HttpRequest.swift in Sources */,
+				A7224BD92015F87600F0A59D /* RegistrationViewController.swift in Sources */,
 				A74AAEC82014FA1400A6273C /* AppDelegate.swift in Sources */,
 				A74AAE992014F84500A6273C /* ibeyonde.xcdatamodeld in Sources */,
 				A74AAED62014FA1400A6273C /* IQKeyboardReturnKeyHandler.swift in Sources */,
@@ -528,12 +560,13 @@
 			baseConfigurationReference = D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UDN678Y5PY;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ibeyonde/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nikhil.ibeyonde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -544,12 +577,13 @@
 			baseConfigurationReference = 686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UDN678Y5PY;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ibeyonde/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nikhil.ibeyonde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
