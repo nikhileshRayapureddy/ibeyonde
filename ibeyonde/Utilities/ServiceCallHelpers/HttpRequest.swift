@@ -80,10 +80,8 @@ class HttpRequest
         var request  = URLRequest(url: URL(string:webStringURL as String)!)
         
         request.httpMethod = MethodNamee
-        
-        
+        request.addValue("Basic ZGVtbzpkZW1vMTIz", forHTTPHeaderField: "Authorization")
         request.httpBody = requestBody
-        
         let url : URL = URL(string: webStringURL as String)!
         request.url = url
         
