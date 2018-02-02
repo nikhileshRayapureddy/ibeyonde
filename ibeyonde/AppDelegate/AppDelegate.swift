@@ -88,6 +88,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    //MARK:- Loader  methods
+    func showLoader(message : String)
+    {
+        DispatchQueue.main.async {
+            
+            let vwBgg = self.window!.viewWithTag(123453)
+            if vwBgg == nil
+            {
+                let vwBg = UIView( frame:self.window!.frame)
+                vwBg.backgroundColor = UIColor.clear
+                vwBg.tag = 123453
+                self.window!.addSubview(vwBg)
+                
+                let imgVw = UIImageView (frame: vwBg.frame)
+                imgVw.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                vwBg.addSubview(imgVw)
+                
+                let height = vwBg.frame.size.height/2.0
+                
+                let lblText = UILabel(frame:CGRect(x: 0, y: height-60, width: vwBg.frame.size.width, height: 30))
+                lblText.font = UIFont(name: "OpenSans", size: 17)
+                
+                if message == ""
+                {
+                    lblText.text =  "Loading ..."
+                }
+                else
+                {
+                    lblText.text = message
+                }
+                lblText.textAlignment = NSTextAlignment.center
+                lblText.backgroundColor = UIColor.clear
+                lblText.textColor =   UIColor.white// Color_AppGreen
+                // lblText.textColor = Color_NavBarTint
+                vwBg.addSubview(lblText)
+                
+                let indicator = UIActivityIndicatorView(activityIndicatorStyle:.whiteLarge)
+                indicator.center = vwBg.center
+                vwBg.addSubview(indicator)
+                indicator.startAnimating()
+                
+                vwBg.addSubview(indicator)
+                indicator.bringSubview(toFront: vwBg)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                
+            }
+        }
+    }
+    func removeloder()
+    {
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            let vwBg = self.window!.viewWithTag(123453)
+            if vwBg != nil
+            {
+                vwBg!.removeFromSuperview()
+            }
+        }
+        
+    }
 
 }
 

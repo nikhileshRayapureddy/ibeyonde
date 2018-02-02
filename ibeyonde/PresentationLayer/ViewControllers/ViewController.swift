@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: BaseViewController {
 
-    @IBOutlet weak var btnLiveHD: UIButton!
-    @IBOutlet weak var btnHistory: UIButton!
+    @IBOutlet weak var clVwList: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,11 +19,8 @@ class ViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.designNavigationBar(isBack: false)
-        btnLiveHD.layer.cornerRadius = 5
-        btnLiveHD.layer.masksToBounds = true
-        
-        btnHistory.layer.cornerRadius = 5
-        btnHistory.layer.masksToBounds = true
+        clVwList.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ListCollectionViewCell")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,3 +31,27 @@ class ViewController: BaseViewController {
 
 }
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 50//arrImages.count
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let width = ScreenWidth - 20
+        let height = width * (0.75)
+        return CGSize (width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
+        cell.btnLiveHD.layer.cornerRadius = 5
+        cell.btnLiveHD.layer.masksToBounds = true
+        
+        cell.btnHistory.layer.cornerRadius = 5
+        cell.btnHistory.layer.masksToBounds = true
+
+        return cell
+    }
+}

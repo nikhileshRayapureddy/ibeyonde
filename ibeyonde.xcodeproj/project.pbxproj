@@ -14,6 +14,9 @@
 		A7224BD32015CD9000F0A59D /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */; };
 		A7224BD72015F86900F0A59D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD62015F86900F0A59D /* LoginViewController.swift */; };
 		A7224BD92015F87600F0A59D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD82015F87600F0A59D /* RegistrationViewController.swift */; };
+		A7274FBA2020D8CB006F9597 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7274FB82020D8CB006F9597 /* ListCollectionViewCell.swift */; };
+		A7274FBB2020D8CB006F9597 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7274FB92020D8CB006F9597 /* ListCollectionViewCell.xib */; };
+		A7274FBE2020DAD7006F9597 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7274FBD2020DAD7006F9597 /* ServiceLayer.swift */; };
 		A74AAE962014F84500A6273C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE942014F84500A6273C /* Main.storyboard */; };
 		A74AAE992014F84500A6273C /* ibeyonde.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A74AAE972014F84500A6273C /* ibeyonde.xcdatamodeld */; };
 		A74AAE9B2014F84500A6273C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE9A2014F84500A6273C /* Assets.xcassets */; };
@@ -52,6 +55,9 @@
 		A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		A7224BD62015F86900F0A59D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A7224BD82015F87600F0A59D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		A7274FB82020D8CB006F9597 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7274FB92020D8CB006F9597 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
+		A7274FBD2020DAD7006F9597 /* ServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
 		A74AAE8D2014F84500A6273C /* ibeyonde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibeyonde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74AAE952014F84500A6273C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A74AAE982014F84500A6273C /* ibeyonde.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ibeyonde.xcdatamodel; sourceTree = "<group>"; };
@@ -119,8 +125,18 @@
 			children = (
 				A7224BD02015CD9000F0A59D /* HistoryCollectionViewCell.swift */,
 				A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */,
+				A7274FB82020D8CB006F9597 /* ListCollectionViewCell.swift */,
+				A7274FB92020D8CB006F9597 /* ListCollectionViewCell.xib */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		A7274FBC2020DAD1006F9597 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A7274FBD2020DAD7006F9597 /* ServiceLayer.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 		A74AAE842014F84500A6273C = {
@@ -144,6 +160,7 @@
 		A74AAE8F2014F84500A6273C /* ibeyonde */ = {
 			isa = PBXGroup;
 			children = (
+				A7274FBC2020DAD1006F9597 /* ServiceLayer */,
 				A74AAEA52014FA1300A6273C /* AppDelegate */,
 				A74AAEA72014FA1300A6273C /* PresentationLayer */,
 				A74AAEAA2014FA1300A6273C /* Utilities */,
@@ -334,6 +351,7 @@
 			files = (
 				A7224BD32015CD9000F0A59D /* HistoryCollectionViewCell.xib in Resources */,
 				A74AAE9E2014F84500A6273C /* LaunchScreen.storyboard in Resources */,
+				A7274FBB2020D8CB006F9597 /* ListCollectionViewCell.xib in Resources */,
 				A74AAE9B2014F84500A6273C /* Assets.xcassets in Resources */,
 				A74AAEDD2014FA1400A6273C /* IQKeyboardManager.bundle in Resources */,
 				A74AAE962014F84500A6273C /* Main.storyboard in Resources */,
@@ -398,6 +416,7 @@
 				A7224BD72015F86900F0A59D /* LoginViewController.swift in Sources */,
 				A74AAECD2014FA1400A6273C /* IQNSArray+Sort.swift in Sources */,
 				A74AAED42014FA1400A6273C /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				A7274FBA2020D8CB006F9597 /* ListCollectionViewCell.swift in Sources */,
 				A74AAED72014FA1400A6273C /* IQTextView.swift in Sources */,
 				A7224BD22015CD9000F0A59D /* HistoryCollectionViewCell.swift in Sources */,
 				A74AAED92014FA1400A6273C /* IQPreviousNextView.swift in Sources */,
@@ -419,6 +438,7 @@
 				A74AAED62014FA1400A6273C /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				A74AAED82014FA1400A6273C /* IQBarButtonItem.swift in Sources */,
 				A74AAECF2014FA1400A6273C /* IQUITextFieldView+Additions.swift in Sources */,
+				A7274FBE2020DAD7006F9597 /* ServiceLayer.swift in Sources */,
 				A74AAECE2014FA1400A6273C /* IQUIScrollView+Additions.swift in Sources */,
 				A74AAECA2014FA1400A6273C /* FloatLabelTextField.swift in Sources */,
 				A74AAED02014FA1400A6273C /* IQUIView+Hierarchy.swift in Sources */,
