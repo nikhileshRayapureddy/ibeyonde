@@ -10,7 +10,7 @@ import UIKit
 
 class HistoryCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imgVw: UIImageView!
+    @IBOutlet weak var lblTime: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

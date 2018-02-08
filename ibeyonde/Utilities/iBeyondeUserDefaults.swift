@@ -24,7 +24,7 @@ let DRAFTLASTSYNCTIME = "DRAFTLASTSYNCTIME"
 let ONLINELASTSYNCTIME = "ONLINELASTSYNCTIME"
 let NAME = "name"
 let Published = "Published"
-class GetIONUserDefaults: NSObject {
+class iBeyondeUserDefaults: NSObject {
     class func setLoginStatus (object : String)
     {
         UserDefaults.standard.set(object, forKey: isRemember)

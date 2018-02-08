@@ -18,22 +18,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPh-6K-Yae">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l86-WT-gMs">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </imageView>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="zPh-6K-Yae" secondAttribute="bottom" id="RXi-Vw-z0B"/>
-                <constraint firstItem="zPh-6K-Yae" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vpm-ZC-ZQB"/>
-                <constraint firstItem="zPh-6K-Yae" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="u7Z-TV-DOz"/>
-                <constraint firstAttribute="trailing" secondItem="zPh-6K-Yae" secondAttribute="trailing" id="xLi-JV-9B0"/>
+                <constraint firstAttribute="trailing" secondItem="l86-WT-gMs" secondAttribute="trailing" id="1H4-vu-psn"/>
+                <constraint firstItem="l86-WT-gMs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1JR-5V-mzT"/>
+                <constraint firstAttribute="bottom" secondItem="l86-WT-gMs" secondAttribute="bottom" id="b2o-rs-S8j"/>
+                <constraint firstItem="l86-WT-gMs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gbv-Tv-Uhk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="imgVw" destination="zPh-6K-Yae" id="BRg-FZ-9W3"/>
+                <outlet property="lblTime" destination="l86-WT-gMs" id="NPj-uq-PdZ"/>
             </connections>
         </collectionViewCell>
     </objects>

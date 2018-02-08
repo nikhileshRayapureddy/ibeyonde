@@ -76,6 +76,7 @@
             <connections>
                 <outlet property="btnHistory" destination="Hxk-YU-rof" id="rTN-eJ-HcJ"/>
                 <outlet property="btnLiveHD" destination="vRt-xu-M8W" id="b8G-bc-Rc9"/>
+                <outlet property="imgShot" destination="BGf-VP-lpD" id="D1g-VA-6CC"/>
             </connections>
             <point key="canvasLocation" x="-5.5" y="-38.5"/>
         </collectionViewCell>
