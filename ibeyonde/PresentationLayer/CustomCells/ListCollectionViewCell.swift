@@ -11,7 +11,8 @@ import UIKit
 class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btnLiveHD: UIButton!
     @IBOutlet weak var btnHistory: UIButton!
-
+    @IBOutlet weak var imgShot: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
