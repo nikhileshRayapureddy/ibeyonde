@@ -11,6 +11,7 @@ public enum ParsingConstant : Int
 {
     case Login
     case Vists
+    case LiveHD
 }
 protocol ServiceLayer_Delegate {
     func xlmParsingFinishedWith(_home: String,_reachRank:String)
@@ -228,6 +229,32 @@ class ServiceLayer: NSObject {
                         arrImages.append(bo)
                     }
                     successMessage(arrImages)
+                }
+                else
+                {
+                    failureMessage(self.SERVER_ERROR)
+                }
+                
+            }
+        }
+    }
+    public func getLiveHDForList(strID : String,successMessage: @escaping (Any) -> Void , failureMessage : @escaping(Any) ->Void)
+    {
+        let obj : HttpRequest = HttpRequest()
+        obj.tag = ParsingConstant.LiveHD.rawValue
+        obj.MethodNamee = "GET"
+        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=HINI"
+        obj.params = [:]
+        obj.doGetSOAPResponse {(success : Bool) -> Void in
+            if !success
+            {
+                failureMessage(self.SERVER_ERROR)
+            }
+            else
+            {
+                if let data = obj.parsedDataDict["data"] as? String
+                {
+                    successMessage(data)
                 }
                 else
                 {
