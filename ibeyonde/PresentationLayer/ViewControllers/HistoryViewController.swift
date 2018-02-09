@@ -32,15 +32,19 @@ class HistoryViewController: BaseViewController {
     func getHistory()
     {
         app_delegate.showLoader(message: "Loading....")
+        let date = vwCalendar.selectedDate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let strDate = formatter.string(from: date!)
         let layer = ServiceLayer()
-        layer.getHistoryWith(strID: listBO.uuid,strDate: "2018/02/08",strTime: "\(selectedindex + 1)", successMessage: { (response) in
+        layer.getHistoryWith(strID: listBO.uuid,strDate: strDate,strTime: "\(selectedindex + 1)", successMessage: { (response) in
             DispatchQueue.main.async {
                 app_delegate.removeloder()
                 let arrList = response as! [listImageBO]
                 if arrList.count > 0
                 {
                     self.imgVwHistory.animationImages = self.getImage(arrList: arrList)
-                    self.imgVwHistory.animationDuration = 50
+                    self.imgVwHistory.animationDuration = 30
                     self.imgVwHistory.startAnimating()
                 }
                 else

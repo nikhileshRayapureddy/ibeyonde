@@ -101,7 +101,14 @@ class HttpRequest
                     if data is [String:AnyObject]
                     {
                         self.parsedDataDict = self.convertStringToDictionary(dataString) as! [String:AnyObject]
-                    }else
+                    }
+                    else if data is String
+                    {
+                        var dict =  [String:AnyObject]()
+                        dict["data"] = data
+                        self.parsedDataDict = dict
+                    }
+                    else
                     {
                         var dict =  [String:AnyObject]()
                         dict["data"] = self.convertStringToDictionary(dataString) as AnyObject?
@@ -127,20 +134,29 @@ class HttpRequest
     }
     
     func convertStringToDictionary(_ text: NSString) -> AnyObject {
-        if let data = text.data(using: String.Encoding.utf8.rawValue) {
-            do {
-                let json1 = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                if json1 is [[String:AnyObject]]
-                {
-                    print(json1)
-                }
-                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                return json as AnyObject
-            } catch {
-                print("Something went wrong")
-            }
+        if self.tag == ParsingConstant.LiveHD.rawValue
+        {
+            return text as AnyObject
+
         }
-        return "" as AnyObject
+        else
+        {
+            if let data = text.data(using: String.Encoding.utf8.rawValue) {
+                do {
+                    let json1 = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                    if json1 is [[String:AnyObject]]
+                    {
+                        print(json1)
+                    }
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                    return json as AnyObject
+                } catch {
+                    print("Something went wrong")
+                }
+            }
+            return "" as AnyObject
+
+        }
     }
     
     func doPrepareSOAPEnvelope() ->NSMutableString

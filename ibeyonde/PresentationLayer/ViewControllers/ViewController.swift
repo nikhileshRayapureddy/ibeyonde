@@ -178,9 +178,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
         cell.imgShot.animationDuration = 20
         cell.imgShot.startAnimating()
         
+        cell.btnLiveHD.tag = 1000 + indexPath.row
         cell.btnLiveHD.layer.cornerRadius = 5
         cell.btnLiveHD.layer.masksToBounds = true
-        
+        cell.btnLiveHD.addTarget(self, action: #selector(self.btnLiveHDClicked(sender:)), for: .touchUpInside)
+
         cell.btnHistory.layer.cornerRadius = 5
         cell.btnHistory.layer.masksToBounds = true
         cell.btnHistory.tag = 7000 + indexPath.row
@@ -194,6 +196,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
         self.navigationController?.pushViewController(vc, animated: true)
 
     }
+    @objc func btnLiveHDClicked(sender : UIButton)
+    {
+        app_delegate.showLoader(message: "loading...")
+        let layer = ServiceLayer()
+        layer.getLiveHDForList(strID: arrList[sender.tag - 1000].uuid, successMessage: { (response) in
+            DispatchQueue.main.async {
+              app_delegate.removeloder()
+                print(response)
+            }
+        }) { (error) in
+            DispatchQueue.main.async {
+                app_delegate.removeloder()
+            }
+
+        }
+    }
+
     func getImage(bo : DeviceListBO)->[UIImage]
     {
         var arr = [UIImage]()
