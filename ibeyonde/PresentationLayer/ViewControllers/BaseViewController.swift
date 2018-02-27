@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AKSideMenu
+
 let ScreenWidth =  UIScreen.main.bounds.size.width
 let ScreenHeight = UIScreen.main.bounds.size.height
 let app_delegate =  UIApplication.shared.delegate as! AppDelegate
@@ -38,8 +40,16 @@ class BaseViewController: UIViewController {
         }
         else
         {
-            let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: UIButton())
+            let btnMenu = UIButton(type: UIButtonType.custom)
+            btnMenu.frame = CGRect(x: 0, y: 0  , width: 44 , height: 44)
+            btnMenu.setImage(#imageLiteral(resourceName: "menu"), for: UIControlState.normal)
+            btnMenu.contentHorizontalAlignment = .left
+            btnMenu.addTarget(self, action: #selector(self.btnMenuClicked(sender:)), for: UIControlEvents.touchUpInside)
+            let rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: UIView())
+            self.navigationItem.rightBarButtonItems = [negativeSpacer,rightBarButtonItem]
+            let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: btnMenu)
             self.navigationItem.leftBarButtonItems = [negativeSpacer,leftBarButtonItem]
+
 
         }
         
@@ -53,6 +63,10 @@ class BaseViewController: UIViewController {
     @objc func btnBackClicked(sender : UIButton)
     {
         self.navigationController?.popViewController(animated: true)
+    }
+    @objc func btnMenuClicked(sender : UIButton)
+    {
+        self.sideMenuViewController!.presentLeftMenuViewController()
     }
 
     override func didReceiveMemoryWarning() {

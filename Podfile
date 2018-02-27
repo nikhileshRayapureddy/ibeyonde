@@ -6,6 +6,11 @@ target 'ibeyonde' do
   use_frameworks!
     pod 'FSCalendar'
     pod 'Kingfisher'
+    pod 'AKSideMenu'
+    pod 'IQKeyboardManagerSwift'
+    pod 'Kingfisher'
+    # pod 'SideMenu'
+
   # Pods for ibeyonde
 
 

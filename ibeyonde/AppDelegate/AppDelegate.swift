@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AKSideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        print("Kiran Kumar")
+        UIApplication.shared.statusBarStyle = .lightContent
+        UserDefaults.standard.register(defaults: ["DefaultMotion" : "latest"])
+
+        if iBeyondeUserDefaults.getLoginStatus() == "true"
+        {
+            let navigationController: UINavigationController = UINavigationController.init(rootViewController: UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController"))
+            
+            let rightMenuViewController: SideMenuViewController = UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+            
+            // Create side menu controller
+            let sideMenuViewController: AKSideMenu = AKSideMenu(contentViewController: navigationController, leftMenuViewController: rightMenuViewController, rightMenuViewController: nil)
+            let navigationVC: UINavigationController = UINavigationController.init(rootViewController: UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController"))
+
+            // Make it a root controller
+            self.window!.rootViewController = sideMenuViewController
+            
+            self.window!.backgroundColor = UIColor.white
+            self.window?.makeKeyAndVisible()
+        }
+        else
+        {
+            let navigationController: UINavigationController = UINavigationController.init(rootViewController: UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController"))
+            self.window!.rootViewController = navigationController
+            self.window!.backgroundColor = UIColor.white
+            self.window?.makeKeyAndVisible()
+            
+        }
         // Override point for customization after application launch.
+        IQKeyboardManager.sharedManager().enable = true
         return true
     }
 

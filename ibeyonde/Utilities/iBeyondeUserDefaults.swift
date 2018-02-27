@@ -24,6 +24,8 @@ let DRAFTLASTSYNCTIME = "DRAFTLASTSYNCTIME"
 let ONLINELASTSYNCTIME = "ONLINELASTSYNCTIME"
 let NAME = "name"
 let Published = "Published"
+let defaultMotion = "DefaultMotion"
+
 class iBeyondeUserDefaults: NSObject {
     class func setLoginStatus (object : String)
     {
@@ -116,7 +118,6 @@ class iBeyondeUserDefaults: NSObject {
             
         }
     }
-
     class func setUserName (object : String)
     {
         UserDefaults.standard.set(object, forKey: UserName)
@@ -132,6 +133,25 @@ class iBeyondeUserDefaults: NSObject {
         else
         {
             return UserDefaults.standard.object(forKey: UserName) as! String
+            
+        }
+    }
+
+    class func setDefaultMotion (object : String)
+    {
+        UserDefaults.standard.set(object, forKey: defaultMotion)
+        UserDefaults.standard.synchronize()
+    }
+    
+    class func getDefaultMotion () -> String
+    {
+        if UserDefaults.standard.object(forKey: defaultMotion) as? String == nil
+        {
+            return ""
+        }
+        else
+        {
+            return UserDefaults.standard.object(forKey: defaultMotion) as! String
             
         }
     }

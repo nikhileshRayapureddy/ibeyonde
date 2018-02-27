@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AKSideMenu
 
 class LoginViewController: BaseViewController {
 
@@ -46,6 +47,19 @@ class LoginViewController: BaseViewController {
             layer.loginWithUsername(username: txtFldUsername.text!, password: txtFldPwd.text!, successMessage: { (response) in
                 DispatchQueue.main.async {
                     app_delegate.removeloder()
+                    let navigationController: UINavigationController = UINavigationController.init(rootViewController: UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController"))
+                    
+                    let rightMenuViewController: SideMenuViewController = UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+                    
+                    // Create side menu controller
+                    let sideMenuViewController: AKSideMenu = AKSideMenu(contentViewController: navigationController, leftMenuViewController: rightMenuViewController, rightMenuViewController:nil )
+                    
+                    // Make it a root controller
+                    app_delegate.window!.rootViewController = sideMenuViewController
+                    
+                    app_delegate.window!.backgroundColor = UIColor.white
+                    app_delegate.window?.makeKeyAndVisible()
+
                     let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
                     self.navigationController?.pushViewController(vc, animated: true)
 

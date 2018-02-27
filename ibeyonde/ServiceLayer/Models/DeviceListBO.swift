@@ -29,6 +29,7 @@ class DeviceListBO: NSObject {
     var messages = ""
     var expiry = ""
     var ltoken = ""
-    var arrImages = [listImageBO]()
-    
+    var arrImageUrl = [listImageBO]()
+    var arrImages = [UIImage]()
+
 }

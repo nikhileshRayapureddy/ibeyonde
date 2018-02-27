@@ -10,7 +10,7 @@ import UIKit
 public enum ParsingConstant : Int
 {
     case Login
-    case Vists
+    case Registration
     case LiveHD
 }
 protocol ServiceLayer_Delegate {
@@ -42,6 +42,7 @@ class ServiceLayer: NSObject {
                         successMessage(message)
                         iBeyondeUserDefaults.setUserName(object: username)
                         iBeyondeUserDefaults.setPassword(object: password)
+                        iBeyondeUserDefaults.setLoginStatus(object: "true")
                     }
                     else
                     {
@@ -58,12 +59,18 @@ class ServiceLayer: NSObject {
     }
     public func registerWithUsername(username:String,email:String,password:String,phone:String,successMessage: @escaping (Any) -> Void , failureMessage : @escaping(Any) ->Void)
     {
+        var params = [String:AnyObject]()
+        params["user_name"] = username as AnyObject
+        params["user_email"] = email as AnyObject
+        params["user_password_new"] = password as AnyObject
+        params["user_password_repeat"] = password as AnyObject
+        params["user_phone"] = phone as AnyObject
 
         let obj : HttpRequest = HttpRequest()
-        obj.tag = ParsingConstant.Login.rawValue
+        obj.tag = ParsingConstant.Registration.rawValue
         obj.MethodNamee = "POST"
-        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=register&user_name=\(username)&user_email=\(email)&user_password_new=\(password)&user_password_repeat=\(password)&user_phone=\(phone)"
-        obj.params = [:]
+        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=register"//&user_name=\(username)&user_email=\(email)&user_password_new=\(password)&user_password_repeat=\(password)&user_phone=\(phone)
+        obj.params = params
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success
             {
@@ -73,7 +80,7 @@ class ServiceLayer: NSObject {
             {
                 if let code = obj.parsedDataDict["code"] as? NSNumber,let message = obj.parsedDataDict["message"] as? String
                 {
-                    if code == 200
+                    if code == 205
                     {
                         successMessage(message)
                     }
@@ -113,6 +120,10 @@ class ServiceLayer: NSObject {
                         if let code = dict["uuid"] as? String
                         {
                            bo.uuid = code
+                        }
+                        if let device_name = dict["device_name"] as? String
+                        {
+                            bo.device_name = device_name
                         }
                         arrDevices.append(bo)
                     }
@@ -243,7 +254,33 @@ class ServiceLayer: NSObject {
         let obj : HttpRequest = HttpRequest()
         obj.tag = ParsingConstant.LiveHD.rawValue
         obj.MethodNamee = "GET"
-        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=HINI"
+        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=MINI"
+        obj.params = [:]
+        obj.doGetSOAPResponse {(success : Bool) -> Void in
+            if !success
+            {
+                failureMessage(self.SERVER_ERROR)
+            }
+            else
+            {
+                if let data = obj.parsedDataDict["data"] as? String
+                {
+                    successMessage(data)
+                }
+                else
+                {
+                    failureMessage(self.SERVER_ERROR)
+                }
+                
+            }
+        }
+    }
+    public func getLiveForList(strID : String,successMessage: @escaping (Any) -> Void , failureMessage : @escaping(Any) ->Void)
+    {
+        let obj : HttpRequest = HttpRequest()
+        obj.tag = ParsingConstant.LiveHD.rawValue
+        obj.MethodNamee = "GET"
+        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=SIMI"
         obj.params = [:]
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success
