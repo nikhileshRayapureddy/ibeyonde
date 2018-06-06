@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AKSideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.statusBarStyle = .lightContent
+        UserDefaults.standard.register(defaults: ["DefaultMotion" : "latest"])
+
+        if iBeyondeUserDefaults.getLoginStatus() == "true"
+        {
+            let navigationController: UINavigationController = UINavigationController.init(rootViewController: UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController"))
+            
+            let rightMenuViewController: SideMenuViewController = UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+            
+            // Create side menu controller
+            let sideMenuViewController: AKSideMenu = AKSideMenu(contentViewController: navigationController, leftMenuViewController: rightMenuViewController, rightMenuViewController: nil)
+            let navigationVC: UINavigationController = UINavigationController.init(rootViewController: UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController"))
+
+            // Make it a root controller
+            self.window!.rootViewController = sideMenuViewController
+            
+            self.window!.backgroundColor = UIColor.white
+            self.window?.makeKeyAndVisible()
+        }
+        else
+        {
+            let navigationController: UINavigationController = UINavigationController.init(rootViewController: UIStoryboard (name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LoginViewController"))
+            self.window!.rootViewController = navigationController
+            self.window!.backgroundColor = UIColor.white
+            self.window?.makeKeyAndVisible()
+            
+        }
         // Override point for customization after application launch.
+        IQKeyboardManager.sharedManager().enable = true
         return true
     }
 
@@ -87,6 +116,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    //MARK:- Loader  methods
+    func showLoader(message : String)
+    {
+        DispatchQueue.main.async {
+            
+            let vwBgg = self.window!.viewWithTag(123453)
+            if vwBgg == nil
+            {
+                let vwBg = UIView( frame:self.window!.frame)
+                vwBg.backgroundColor = UIColor.clear
+                vwBg.tag = 123453
+                self.window!.addSubview(vwBg)
+                
+                let imgVw = UIImageView (frame: vwBg.frame)
+                imgVw.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                vwBg.addSubview(imgVw)
+                
+                let height = vwBg.frame.size.height/2.0
+                
+                let lblText = UILabel(frame:CGRect(x: 0, y: height-60, width: vwBg.frame.size.width, height: 30))
+                lblText.font = UIFont(name: "OpenSans", size: 17)
+                
+                if message == ""
+                {
+                    lblText.text =  "Loading ..."
+                }
+                else
+                {
+                    lblText.text = message
+                }
+                lblText.textAlignment = NSTextAlignment.center
+                lblText.backgroundColor = UIColor.clear
+                lblText.textColor =   UIColor.white// Color_AppGreen
+                // lblText.textColor = Color_NavBarTint
+                vwBg.addSubview(lblText)
+                
+                let indicator = UIActivityIndicatorView(activityIndicatorStyle:.whiteLarge)
+                indicator.center = vwBg.center
+                vwBg.addSubview(indicator)
+                indicator.startAnimating()
+                
+                vwBg.addSubview(indicator)
+                indicator.bringSubview(toFront: vwBg)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                
+            }
+        }
+    }
+    func removeloder()
+    {
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            let vwBg = self.window!.viewWithTag(123453)
+            if vwBg != nil
+            {
+                vwBg!.removeFromSuperview()
+            }
+        }
+        
     }
 
 }

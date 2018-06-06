@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178FECE6ACF0A809B072DB45 /* Pods_ibeyonde.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */; };
+		A7224BCC2015BAA500F0A59D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BCB2015BAA500F0A59D /* BaseViewController.swift */; };
+		A7224BCE2015BCA000F0A59D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BCD2015BCA000F0A59D /* HistoryViewController.swift */; };
+		A7224BD22015CD9000F0A59D /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD02015CD9000F0A59D /* HistoryCollectionViewCell.swift */; };
+		A7224BD32015CD9000F0A59D /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */; };
+		A7224BD72015F86900F0A59D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD62015F86900F0A59D /* LoginViewController.swift */; };
+		A7224BD92015F87600F0A59D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7224BD82015F87600F0A59D /* RegistrationViewController.swift */; };
+		A7274FBA2020D8CB006F9597 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7274FB82020D8CB006F9597 /* ListCollectionViewCell.swift */; };
+		A7274FBB2020D8CB006F9597 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7274FB92020D8CB006F9597 /* ListCollectionViewCell.xib */; };
+		A7274FBE2020DAD7006F9597 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7274FBD2020DAD7006F9597 /* ServiceLayer.swift */; };
 		A74AAE962014F84500A6273C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE942014F84500A6273C /* Main.storyboard */; };
 		A74AAE992014F84500A6273C /* ibeyonde.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A74AAE972014F84500A6273C /* ibeyonde.xcdatamodeld */; };
 		A74AAE9B2014F84500A6273C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74AAE9A2014F84500A6273C /* Assets.xcassets */; };
@@ -33,9 +43,33 @@
 		A74AAEDB2014FA1400A6273C /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AAEC22014FA1300A6273C /* IQToolbar.swift */; };
 		A74AAEDC2014FA1400A6273C /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AAEC32014FA1300A6273C /* IQUIView+IQKeyboardToolbar.swift */; };
 		A74AAEDD2014FA1400A6273C /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A74AAEC52014FA1300A6273C /* IQKeyboardManager.bundle */; };
+		A74AAEE02014FCB000A6273C /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AAEDF2014FCB000A6273C /* HttpRequest.swift */; };
+		A77FC87F202E972400EC7E06 /* MjpegStreamingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC87E202E972400EC7E06 /* MjpegStreamingController.swift */; };
+		A77FC881202E975500EC7E06 /* LiveHDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC880202E975500EC7E06 /* LiveHDViewController.swift */; };
+		A77FC883202E9B7D00EC7E06 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC882202E9B7D00EC7E06 /* SideMenuViewController.swift */; };
+		A77FC889202EA08600EC7E06 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC886202EA08600EC7E06 /* ContentViewController.swift */; };
+		A77FC88A202EA08600EC7E06 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC887202EA08600EC7E06 /* RootViewController.swift */; };
+		A77FC88C202EA10700EC7E06 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC88B202EA10700EC7E06 /* MenuCell.swift */; };
+		A77FC88E202EA1A500EC7E06 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC88D202EA1A500EC7E06 /* LiveViewController.swift */; };
+		A77FC890202EACC400EC7E06 /* LiveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FC88F202EACC400EC7E06 /* LiveCollectionViewCell.swift */; };
+		A77FC892202EACCE00EC7E06 /* LiveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77FC891202EACCE00EC7E06 /* LiveCollectionViewCell.xib */; };
+		A78FC14E2037553600539793 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FC14D2037553600539793 /* SettingsViewController.swift */; };
+		A7BE9B30202CAB76001B2540 /* DeviceListBO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE9B2F202CAB76001B2540 /* DeviceListBO.swift */; };
+		A7BE9B32202CBFD4001B2540 /* listImageBO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE9B31202CBFD4001B2540 /* listImageBO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibeyonde.release.xcconfig"; path = "Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde.release.xcconfig"; sourceTree = "<group>"; };
+		897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ibeyonde.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7224BCB2015BAA500F0A59D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A7224BCD2015BCA000F0A59D /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		A7224BD02015CD9000F0A59D /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		A7224BD62015F86900F0A59D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A7224BD82015F87600F0A59D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		A7274FB82020D8CB006F9597 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7274FB92020D8CB006F9597 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
+		A7274FBD2020DAD7006F9597 /* ServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
 		A74AAE8D2014F84500A6273C /* ibeyonde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ibeyonde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74AAE952014F84500A6273C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A74AAE982014F84500A6273C /* ibeyonde.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ibeyonde.xcdatamodel; sourceTree = "<group>"; };
@@ -65,6 +99,20 @@
 		A74AAEC22014FA1300A6273C /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
 		A74AAEC32014FA1300A6273C /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		A74AAEC52014FA1300A6273C /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		A74AAEDF2014FCB000A6273C /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		A77FC87E202E972400EC7E06 /* MjpegStreamingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MjpegStreamingController.swift; sourceTree = "<group>"; };
+		A77FC880202E975500EC7E06 /* LiveHDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveHDViewController.swift; sourceTree = "<group>"; };
+		A77FC882202E9B7D00EC7E06 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		A77FC886202EA08600EC7E06 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		A77FC887202EA08600EC7E06 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		A77FC88B202EA10700EC7E06 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		A77FC88D202EA1A500EC7E06 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		A77FC88F202EACC400EC7E06 /* LiveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollectionViewCell.swift; sourceTree = "<group>"; };
+		A77FC891202EACCE00EC7E06 /* LiveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCollectionViewCell.xib; sourceTree = "<group>"; };
+		A78FC14D2037553600539793 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A7BE9B2F202CAB76001B2540 /* DeviceListBO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListBO.swift; sourceTree = "<group>"; };
+		A7BE9B31202CBFD4001B2540 /* listImageBO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listImageBO.swift; sourceTree = "<group>"; };
+		D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ibeyonde.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +120,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178FECE6ACF0A809B072DB45 /* Pods_ibeyonde.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34473A565BCFD110FF3633E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				897C8A860C40E85E5A4639F3 /* Pods_ibeyonde.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58AA45215E063EFAF49AB3FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */,
+				686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A7224BCF2015CD7300F0A59D /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				A7224BD02015CD9000F0A59D /* HistoryCollectionViewCell.swift */,
+				A7224BD12015CD9000F0A59D /* HistoryCollectionViewCell.xib */,
+				A7274FB82020D8CB006F9597 /* ListCollectionViewCell.swift */,
+				A7274FB92020D8CB006F9597 /* ListCollectionViewCell.xib */,
+				A77FC88F202EACC400EC7E06 /* LiveCollectionViewCell.swift */,
+				A77FC891202EACCE00EC7E06 /* LiveCollectionViewCell.xib */,
+				A77FC88B202EA10700EC7E06 /* MenuCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		A7274FBC2020DAD1006F9597 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				A7BE9B2E202CAB60001B2540 /* Models */,
+				A7274FBD2020DAD7006F9597 /* ServiceLayer.swift */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
 		A74AAE842014F84500A6273C = {
 			isa = PBXGroup;
 			children = (
 				A74AAE8F2014F84500A6273C /* ibeyonde */,
 				A74AAE8E2014F84500A6273C /* Products */,
+				58AA45215E063EFAF49AB3FD /* Pods */,
+				34473A565BCFD110FF3633E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +188,7 @@
 		A74AAE8F2014F84500A6273C /* ibeyonde */ = {
 			isa = PBXGroup;
 			children = (
+				A7274FBC2020DAD1006F9597 /* ServiceLayer */,
 				A74AAEA52014FA1300A6273C /* AppDelegate */,
 				A74AAEA72014FA1300A6273C /* PresentationLayer */,
 				A74AAEAA2014FA1300A6273C /* Utilities */,
@@ -120,6 +212,7 @@
 		A74AAEA72014FA1300A6273C /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				A7224BCF2015CD7300F0A59D /* CustomCells */,
 				A74AAEA82014FA1300A6273C /* ViewControllers */,
 			);
 			path = PresentationLayer;
@@ -128,7 +221,15 @@
 		A74AAEA82014FA1300A6273C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A77FC884202EA08600EC7E06 /* SideMenuControllers */,
 				A74AAEA92014FA1300A6273C /* ViewController.swift */,
+				A7224BCB2015BAA500F0A59D /* BaseViewController.swift */,
+				A7224BCD2015BCA000F0A59D /* HistoryViewController.swift */,
+				A7224BD62015F86900F0A59D /* LoginViewController.swift */,
+				A7224BD82015F87600F0A59D /* RegistrationViewController.swift */,
+				A77FC880202E975500EC7E06 /* LiveHDViewController.swift */,
+				A77FC88D202EA1A500EC7E06 /* LiveViewController.swift */,
+				A78FC14D2037553600539793 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -136,6 +237,8 @@
 		A74AAEAA2014FA1300A6273C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A77FC87E202E972400EC7E06 /* MjpegStreamingController.swift */,
+				A74AAEDE2014FCB000A6273C /* ServiceCallHelpers */,
 				A74AAEAB2014FA1300A6273C /* FloatLabelTextField.swift */,
 				A74AAEAC2014FA1300A6273C /* FloatLabelTextView.swift */,
 				A74AAEAD2014FA1300A6273C /* iBeyondeUserDefaults.swift */,
@@ -209,6 +312,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A74AAEDE2014FCB000A6273C /* ServiceCallHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				A74AAEDF2014FCB000A6273C /* HttpRequest.swift */,
+			);
+			path = ServiceCallHelpers;
+			sourceTree = "<group>";
+		};
+		A77FC884202EA08600EC7E06 /* SideMenuControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A77FC882202E9B7D00EC7E06 /* SideMenuViewController.swift */,
+				A77FC886202EA08600EC7E06 /* ContentViewController.swift */,
+				A77FC887202EA08600EC7E06 /* RootViewController.swift */,
+			);
+			path = SideMenuControllers;
+			sourceTree = "<group>";
+		};
+		A7BE9B2E202CAB60001B2540 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7BE9B2F202CAB76001B2540 /* DeviceListBO.swift */,
+				A7BE9B31202CBFD4001B2540 /* listImageBO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,9 +346,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A74AAEA22014F84500A6273C /* Build configuration list for PBXNativeTarget "ibeyonde" */;
 			buildPhases = (
+				F3DE77CB1513F5FD4DA9039F /* [CP] Check Pods Manifest.lock */,
 				A74AAE892014F84500A6273C /* Sources */,
 				A74AAE8A2014F84500A6273C /* Frameworks */,
 				A74AAE8B2014F84500A6273C /* Resources */,
+				051EADF416B6F16D67483B12 /* [CP] Embed Pods Frameworks */,
+				1499D4D173211731109DA376 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,7 +374,7 @@
 				TargetAttributes = {
 					A74AAE8C2014F84500A6273C = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -268,7 +401,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A77FC892202EACCE00EC7E06 /* LiveCollectionViewCell.xib in Resources */,
+				A7224BD32015CD9000F0A59D /* HistoryCollectionViewCell.xib in Resources */,
 				A74AAE9E2014F84500A6273C /* LaunchScreen.storyboard in Resources */,
+				A7274FBB2020D8CB006F9597 /* ListCollectionViewCell.xib in Resources */,
 				A74AAE9B2014F84500A6273C /* Assets.xcassets in Resources */,
 				A74AAEDD2014FA1400A6273C /* IQKeyboardManager.bundle in Resources */,
 				A74AAE962014F84500A6273C /* Main.storyboard in Resources */,
@@ -277,32 +413,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		051EADF416B6F16D67483B12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AKSideMenu/AKSideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AKSideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1499D4D173211731109DA376 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ibeyonde/Pods-ibeyonde-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3DE77CB1513F5FD4DA9039F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ibeyonde-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A74AAE892014F84500A6273C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7224BD72015F86900F0A59D /* LoginViewController.swift in Sources */,
 				A74AAECD2014FA1400A6273C /* IQNSArray+Sort.swift in Sources */,
+				A77FC88A202EA08600EC7E06 /* RootViewController.swift in Sources */,
 				A74AAED42014FA1400A6273C /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				A7274FBA2020D8CB006F9597 /* ListCollectionViewCell.swift in Sources */,
 				A74AAED72014FA1400A6273C /* IQTextView.swift in Sources */,
+				A77FC890202EACC400EC7E06 /* LiveCollectionViewCell.swift in Sources */,
+				A78FC14E2037553600539793 /* SettingsViewController.swift in Sources */,
+				A7224BD22015CD9000F0A59D /* HistoryCollectionViewCell.swift in Sources */,
 				A74AAED92014FA1400A6273C /* IQPreviousNextView.swift in Sources */,
 				A74AAEC92014FA1400A6273C /* ViewController.swift in Sources */,
+				A7224BCC2015BAA500F0A59D /* BaseViewController.swift in Sources */,
 				A74AAED32014FA1400A6273C /* IQKeyboardManagerConstants.swift in Sources */,
+				A77FC88C202EA10700EC7E06 /* MenuCell.swift in Sources */,
+				A7BE9B30202CAB76001B2540 /* DeviceListBO.swift in Sources */,
 				A74AAECB2014FA1400A6273C /* FloatLabelTextView.swift in Sources */,
 				A74AAED22014FA1400A6273C /* IQUIWindow+Hierarchy.swift in Sources */,
+				A77FC889202EA08600EC7E06 /* ContentViewController.swift in Sources */,
 				A74AAEDC2014FA1400A6273C /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				A74AAEDB2014FA1400A6273C /* IQToolbar.swift in Sources */,
 				A74AAED52014FA1400A6273C /* IQKeyboardManager.swift in Sources */,
 				A74AAEDA2014FA1400A6273C /* IQTitleBarButtonItem.swift in Sources */,
+				A7224BCE2015BCA000F0A59D /* HistoryViewController.swift in Sources */,
+				A77FC883202E9B7D00EC7E06 /* SideMenuViewController.swift in Sources */,
 				A74AAED12014FA1400A6273C /* IQUIViewController+Additions.swift in Sources */,
+				A74AAEE02014FCB000A6273C /* HttpRequest.swift in Sources */,
+				A77FC881202E975500EC7E06 /* LiveHDViewController.swift in Sources */,
+				A7224BD92015F87600F0A59D /* RegistrationViewController.swift in Sources */,
 				A74AAEC82014FA1400A6273C /* AppDelegate.swift in Sources */,
 				A74AAE992014F84500A6273C /* ibeyonde.xcdatamodeld in Sources */,
 				A74AAED62014FA1400A6273C /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				A74AAED82014FA1400A6273C /* IQBarButtonItem.swift in Sources */,
 				A74AAECF2014FA1400A6273C /* IQUITextFieldView+Additions.swift in Sources */,
+				A7274FBE2020DAD7006F9597 /* ServiceLayer.swift in Sources */,
 				A74AAECE2014FA1400A6273C /* IQUIScrollView+Additions.swift in Sources */,
+				A77FC88E202EA1A500EC7E06 /* LiveViewController.swift in Sources */,
+				A7BE9B32202CBFD4001B2540 /* listImageBO.swift in Sources */,
 				A74AAECA2014FA1400A6273C /* FloatLabelTextField.swift in Sources */,
 				A74AAED02014FA1400A6273C /* IQUIView+Hierarchy.swift in Sources */,
+				A77FC87F202E972400EC7E06 /* MjpegStreamingController.swift in Sources */,
 				A74AAECC2014FA1400A6273C /* iBeyondeUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,14 +653,18 @@
 		};
 		A74AAEA32014F84500A6273C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UDN678Y5PY;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GNZQY3798N;
 				INFOPLIST_FILE = ibeyonde/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Nikhil.ibeyonde;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iBeyonde.iBeyonde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f934f186-306e-4d81-9456-9e500c4f1ab9";
+				PROVISIONING_PROFILE_SPECIFIER = iBeyonde_Dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,14 +672,18 @@
 		};
 		A74AAEA42014F84500A6273C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UDN678Y5PY;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GNZQY3798N;
 				INFOPLIST_FILE = ibeyonde/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Nikhil.ibeyonde;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iBeyonde.iBeyonde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f934f186-306e-4d81-9456-9e500c4f1ab9";
+				PROVISIONING_PROFILE_SPECIFIER = iBeyonde_Dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,21 @@
+PODS:
+  - AKSideMenu (1.4.1)
+  - FSCalendar (2.7.9)
+  - IQKeyboardManagerSwift (5.0.6)
+  - Kingfisher (4.5.0)
+
+DEPENDENCIES:
+  - AKSideMenu
+  - FSCalendar
+  - IQKeyboardManagerSwift
+  - Kingfisher
+
+SPEC CHECKSUMS:
+  AKSideMenu: 5f253516c339960e474f81c3da53540368520be5
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
+  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
+
+PODFILE CHECKSUM: d438fc1a395f671d973b6cffbab783a83b5d0ab3
+
+COCOAPODS: 1.3.1
