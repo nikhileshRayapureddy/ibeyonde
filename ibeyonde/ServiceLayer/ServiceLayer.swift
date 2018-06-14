@@ -102,7 +102,8 @@ class ServiceLayer: NSObject {
         let obj : HttpRequest = HttpRequest()
         obj.tag = ParsingConstant.Login.rawValue
         obj.MethodNamee = "GET"
-        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=devicelist"
+//        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=devicelist"
+        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=devicelist"
         obj.params = [:]
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success
@@ -143,7 +144,8 @@ class ServiceLayer: NSObject {
         let obj : HttpRequest = HttpRequest()
         obj.tag = ParsingConstant.Login.rawValue
         obj.MethodNamee = "GET"
-        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=lastalerts&uuid=\(strID)"
+//        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=lastalerts&uuid=\(strID)"
+        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=lastalerts&uuid=\(strID)"
         obj.params = [:]
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success
@@ -177,7 +179,8 @@ class ServiceLayer: NSObject {
         let obj : HttpRequest = HttpRequest()
         obj.tag = ParsingConstant.Login.rawValue
         obj.MethodNamee = "GET"
-        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=lastalert&uuid=\(strID)"
+//        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=lastalert&uuid=\(strID)"
+        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=lastalert&uuid=\(strID)"
         obj.params = [:]
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success
@@ -214,7 +217,8 @@ class ServiceLayer: NSObject {
         let obj : HttpRequest = HttpRequest()
         obj.tag = ParsingConstant.Login.rawValue
         obj.MethodNamee = "GET"
-        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=history&uuid=\(strID)&date=\(strDate)&time=\(strTime)"
+//        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=history&uuid=\(strID)&date=\(strDate)&time=\(strTime)"
+        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=history&uuid=\(strID)&date=\(strDate)&time=\(strTime)"
         obj.params = [:]
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success
@@ -254,8 +258,9 @@ class ServiceLayer: NSObject {
         let obj : HttpRequest = HttpRequest()
         obj.tag = ParsingConstant.LiveHD.rawValue
         obj.MethodNamee = "GET"
-        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=MINI"
-        obj.params = [:]
+//        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=MINI"
+        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=MINI"
+      obj.params = [:]
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success
             {
@@ -280,7 +285,8 @@ class ServiceLayer: NSObject {
         let obj : HttpRequest = HttpRequest()
         obj.tag = ParsingConstant.LiveHD.rawValue
         obj.MethodNamee = "GET"
-        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=SIMI"
+//        obj._serviceURL = "https://\(iBeyondeUserDefaults.getUserName()):\(iBeyondeUserDefaults.getPassword())@app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=SIMI"
+        obj._serviceURL = "https://app.ibeyonde.com/api/iot.php?view=live&uuid=\(strID)&quality=SIMI"
         obj.params = [:]
         obj.doGetSOAPResponse {(success : Bool) -> Void in
             if !success

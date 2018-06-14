@@ -656,17 +656,18 @@
 			baseConfigurationReference = D68B64DE405CE598C3935B04 /* Pods-ibeyonde.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GNZQY3798N;
+				DEVELOPMENT_TEAM = N75U3D8GN7;
 				INFOPLIST_FILE = ibeyonde/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iBeyonde.iBeyonde;
+				PRODUCT_BUNDLE_IDENTIFIER = com.supergame.iBeyonde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f934f186-306e-4d81-9456-9e500c4f1ab9";
-				PROVISIONING_PROFILE_SPECIFIER = iBeyonde_Dev;
+				PROVISIONING_PROFILE = "c35ac87e-1167-4f17-a2e2-f126eaa8ccdc";
+				PROVISIONING_PROFILE_SPECIFIER = iBeyonde_AppStore;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -675,17 +676,18 @@
 			baseConfigurationReference = 686981E5DC486338DD91F205 /* Pods-ibeyonde.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GNZQY3798N;
+				DEVELOPMENT_TEAM = N75U3D8GN7;
 				INFOPLIST_FILE = ibeyonde/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iBeyonde.iBeyonde;
+				PRODUCT_BUNDLE_IDENTIFIER = com.supergame.iBeyonde;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f934f186-306e-4d81-9456-9e500c4f1ab9";
-				PROVISIONING_PROFILE_SPECIFIER = iBeyonde_Dev;
+				PROVISIONING_PROFILE = "c35ac87e-1167-4f17-a2e2-f126eaa8ccdc";
+				PROVISIONING_PROFILE_SPECIFIER = iBeyonde_AppStore;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

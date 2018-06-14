@@ -24,6 +24,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="341"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unsupported format" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3l-4q-6YT">
+                        <rect key="frame" x="0.0" y="174" width="375" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="cIN-0c-8Ii"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGf-VP-lpD">
                         <rect key="frame" x="0.0" y="35" width="375" height="306"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,7 +59,6 @@
                             <constraint firstAttribute="height" constant="35" id="BVe-Iz-eka"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgI-2s-mcc">
@@ -74,13 +82,16 @@
                 <constraint firstAttribute="trailing" secondItem="AgI-2s-mcc" secondAttribute="trailing" id="NQ7-D9-obD"/>
                 <constraint firstItem="BGf-VP-lpD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NVd-Pn-oN2"/>
                 <constraint firstAttribute="trailing" secondItem="BGf-VP-lpD" secondAttribute="trailing" id="OBN-7I-j5B"/>
+                <constraint firstItem="D3l-4q-6YT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P61-jw-pmM"/>
                 <constraint firstItem="0e8-gm-UqV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TfP-aE-0db"/>
                 <constraint firstItem="ojY-kW-RxV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tjp-bJ-5si"/>
                 <constraint firstItem="BGf-VP-lpD" firstAttribute="top" secondItem="AgI-2s-mcc" secondAttribute="bottom" id="UDp-kS-2ap"/>
                 <constraint firstItem="oeR-jO-588" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VXi-nA-RGU"/>
+                <constraint firstAttribute="trailing" secondItem="D3l-4q-6YT" secondAttribute="trailing" id="VvR-bZ-wHJ"/>
                 <constraint firstAttribute="trailing" secondItem="oeR-jO-588" secondAttribute="trailing" id="aC0-nX-FDr"/>
                 <constraint firstAttribute="bottom" secondItem="ojY-kW-RxV" secondAttribute="bottom" id="bJq-fw-VYN"/>
                 <constraint firstAttribute="trailing" secondItem="ojY-kW-RxV" secondAttribute="trailing" id="gmy-rU-YD7"/>
+                <constraint firstItem="D3l-4q-6YT" firstAttribute="centerY" secondItem="BGf-VP-lpD" secondAttribute="centerY" id="pJ8-eb-VUn"/>
                 <constraint firstAttribute="trailing" secondItem="0e8-gm-UqV" secondAttribute="trailing" id="u3c-tg-Of4"/>
                 <constraint firstItem="AgI-2s-mcc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yds-n4-4l2"/>
             </constraints>
@@ -97,6 +108,7 @@
                 <outlet property="btnLiveHD" destination="0e8-gm-UqV" id="che-6G-YyS"/>
                 <outlet property="imgShot" destination="BGf-VP-lpD" id="D1g-VA-6CC"/>
                 <outlet property="lblDeviceName" destination="oeR-jO-588" id="NZ5-e6-Mml"/>
+                <outlet property="lblUnsupported" destination="D3l-4q-6YT" id="Jhw-yl-2fB"/>
             </connections>
             <point key="canvasLocation" x="-5.5" y="-38.5"/>
         </collectionViewCell>

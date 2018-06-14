@@ -299,6 +299,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
             let listBO = arrList[indexPath.row]
             print("index : \(indexPath.row), ImageUrl : \(listBO.arrImageUrl.count),Images : \(listBO.arrImages.count)")
+            if listBO.arrImageUrl.count>0
+            {
+                if listBO.arrImageUrl[0].strImage.contains(".mp4?")
+                {
+                    cell.lblUnsupported.isHidden = false
+                    cell.imgShot.isHidden = true
+                }
+                else
+                {
+                    cell.lblUnsupported.isHidden = true
+                    cell.imgShot.isHidden = false
+                }
+            }
+            else
+            {
+                cell.lblUnsupported.isHidden = true
+            }
             if listBO.arrImages.count > 0
             {
                 cell.imgShot.animationImages = listBO.arrImages

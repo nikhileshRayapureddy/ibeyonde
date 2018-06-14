@@ -13,6 +13,8 @@ class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btnLiveHD: UIButton!
     @IBOutlet weak var btnHistory: UIButton!
     @IBOutlet weak var imgShot: UIImageView!
+    @IBOutlet weak var lblUnsupported: UILabel!
+    
     var streamingController: MjpegStreamingController!
 
     override func awakeFromNib() {
