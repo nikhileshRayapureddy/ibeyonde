@@ -31,5 +31,6 @@ class DeviceListBO: NSObject {
     var ltoken = ""
     var arrImageUrl = [listImageBO]()
     var arrImages = [UIImage]()
+    var arrLiveUrl = [listImageBO]()
 
 }

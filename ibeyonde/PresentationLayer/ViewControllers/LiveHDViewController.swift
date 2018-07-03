@@ -32,7 +32,10 @@ class LiveHDViewController: BaseViewController {
                 self.loader.startAnimating()
             }
             streamingController.didFinishLoading = { [unowned self] in
-                self.loader.stopAnimating()
+                if self.loader != nil
+                {
+                    self.loader.stopAnimating()
+                }
             }
             
             streamingController.contentURL = URL

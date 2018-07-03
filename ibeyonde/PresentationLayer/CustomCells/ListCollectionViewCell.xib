@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -69,11 +64,18 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c01-Pd-1WR">
+                        <rect key="frame" x="0.0" y="35" width="375" height="306"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.66666666666666663" alpha="0.49919734589041098" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="ojY-kW-RxV" firstAttribute="top" secondItem="0e8-gm-UqV" secondAttribute="bottom" id="0Br-Vh-tOs"/>
+                <constraint firstAttribute="trailing" secondItem="c01-Pd-1WR" secondAttribute="trailing" id="1Wg-AF-F8X"/>
+                <constraint firstItem="ojY-kW-RxV" firstAttribute="top" secondItem="c01-Pd-1WR" secondAttribute="bottom" id="268-kF-PaS"/>
+                <constraint firstItem="c01-Pd-1WR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5yd-6n-1og"/>
                 <constraint firstItem="0e8-gm-UqV" firstAttribute="top" secondItem="oeR-jO-588" secondAttribute="bottom" id="7SK-04-oo7"/>
                 <constraint firstItem="AgI-2s-mcc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CBV-Wk-3Vq"/>
                 <constraint firstItem="BGf-VP-lpD" firstAttribute="top" secondItem="oeR-jO-588" secondAttribute="bottom" id="KJi-kB-sF9"/>
@@ -88,6 +90,7 @@
                 <constraint firstItem="BGf-VP-lpD" firstAttribute="top" secondItem="AgI-2s-mcc" secondAttribute="bottom" id="UDp-kS-2ap"/>
                 <constraint firstItem="oeR-jO-588" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VXi-nA-RGU"/>
                 <constraint firstAttribute="trailing" secondItem="D3l-4q-6YT" secondAttribute="trailing" id="VvR-bZ-wHJ"/>
+                <constraint firstItem="c01-Pd-1WR" firstAttribute="top" secondItem="oeR-jO-588" secondAttribute="bottom" id="Zfd-ff-StQ"/>
                 <constraint firstAttribute="trailing" secondItem="oeR-jO-588" secondAttribute="trailing" id="aC0-nX-FDr"/>
                 <constraint firstAttribute="bottom" secondItem="ojY-kW-RxV" secondAttribute="bottom" id="bJq-fw-VYN"/>
                 <constraint firstAttribute="trailing" secondItem="ojY-kW-RxV" secondAttribute="trailing" id="gmy-rU-YD7"/>
@@ -109,6 +112,7 @@
                 <outlet property="imgShot" destination="BGf-VP-lpD" id="D1g-VA-6CC"/>
                 <outlet property="lblDeviceName" destination="oeR-jO-588" id="NZ5-e6-Mml"/>
                 <outlet property="lblUnsupported" destination="D3l-4q-6YT" id="Jhw-yl-2fB"/>
+                <outlet property="vwPlayer" destination="c01-Pd-1WR" id="uDu-W3-JMd"/>
             </connections>
             <point key="canvasLocation" x="-5.5" y="-38.5"/>
         </collectionViewCell>

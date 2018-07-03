@@ -14,6 +14,7 @@ class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btnHistory: UIButton!
     @IBOutlet weak var imgShot: UIImageView!
     @IBOutlet weak var lblUnsupported: UILabel!
+    @IBOutlet weak var vwPlayer: UIView!
     
     var streamingController: MjpegStreamingController!
 

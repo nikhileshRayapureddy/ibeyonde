@@ -10,20 +10,56 @@ import UIKit
 class ViewController: BaseViewController {
 
     @IBOutlet weak var btnSwitch: UISegmentedControl!
-    @IBOutlet weak var clVwList: UICollectionView!
+    @IBOutlet weak var clVwLive: UICollectionView!
+    @IBOutlet weak var clVwLatest: UICollectionView!
     var arrList = [DeviceListBO]()
-    var count = -1
+    var countLive = -1
+    var countLatest = -1
     var isLive = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
+    override func btnRefreshClicked(sender: UIButton) {
+        if isLive == true
+        {
+            if self.arrList.count > 0
+            {
+                for bo in arrList
+                {
+                    bo.arrLiveUrl.removeAll()
+                    bo.arrImageUrl.removeAll()
+                    bo.arrImages.removeAll()
+                }
+                self.clVwLive.reloadData()
+                let item = self.arrList[0]
+                self.countLive = 0
+                self.getLiveImagesWith(UUID: item.uuid)
+            }
+        }
+        else
+        {
+            if self.arrList.count > 0
+            {
+                for bo in arrList
+                {
+                    bo.arrLiveUrl.removeAll()
+                    bo.arrImageUrl.removeAll()
+                    bo.arrImages.removeAll()
+                }
+                self.clVwLatest.reloadData()
+                let item = self.arrList[0]
+                self.countLatest = 0
+                self.getImagesWith(UUID: item.uuid)
+            }
+
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.designNavigationBar(isBack: false)
-        clVwList.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ListCollectionViewCell")
-        clVwList.register(UINib(nibName: "LiveCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LiveCollectionViewCell")
+        self.designNavigationBarForHome()
+        clVwLatest.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ListCollectionViewCell")
+        clVwLive.register(UINib(nibName: "LiveCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LiveCollectionViewCell")
 
         app_delegate.showLoader(message: "loading...")
         let layer = ServiceLayer()
@@ -31,23 +67,26 @@ class ViewController: BaseViewController {
             DispatchQueue.main.async {
                 app_delegate.removeloder()
                 self.arrList = response as! [DeviceListBO]
-                self.clVwList.reloadData()
+                self.clVwLatest.reloadData()
+                self.clVwLive.reloadData()
                 if self.arrList.count > 0
                 {
                     let item = self.arrList[0]
-                    self.count = 0
+                    self.countLive = 0
+                    self.countLatest = 0
                     if iBeyondeUserDefaults.getDefaultMotion() == "latest"
                     {
                         self.isLive = false
                         self.btnSwitch.selectedSegmentIndex = 0
-                        self.performSelector(inBackground: #selector(self.getImagesWith(UUID:)), with: item.uuid)
                     }
                     else
                     {
                         self.isLive = true
                         self.btnSwitch.selectedSegmentIndex = 1
-                        self.performSelector(inBackground: #selector(self.getLiveImagesWith(UUID:)), with: item.uuid)
                     }
+                    self.performSelector(inBackground: #selector(self.getLiveImagesWith(UUID:)), with: item.uuid)
+                    self.performSelector(inBackground: #selector(self.getImagesWith(UUID:)), with: item.uuid)
+
                     
                 }
             }
@@ -65,36 +104,40 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func switchClicked(_ sender: UISegmentedControl) {
+        self.clVwLatest.isHidden = true
+        self.clVwLive.isHidden = true
         if sender.selectedSegmentIndex == 0
         {
             isLive = false
-            if self.arrList.count > 0
-            {
-                for bo in arrList
-                {
-                    bo.arrImageUrl.removeAll()
-                    bo.arrImages.removeAll()
-                }
-                self.clVwList.reloadData()
-
-                let item = self.arrList[0]
-                self.count = 0
-                self.getImagesWith(UUID: item.uuid)
-            }
+//            if self.arrList.count > 0
+//            {
+//                for bo in arrList
+//                {
+//                    bo.arrImageUrl.removeAll()
+//                    bo.arrImages.removeAll()
+//                }
+//                self.clVwLatest.reloadData()
+//                self.clVwLatest.isHidden = false
+//                let item = self.arrList[0]
+//                self.countLatest = 0
+//                self.getImagesWith(UUID: item.uuid)
+//            }
+            self.clVwLatest.isHidden = false
 
         }
         else
         {
             isLive = true
-            for bo in arrList
-            {
-                bo.arrImageUrl.removeAll()
-                bo.arrImages.removeAll()
-            }
-            self.clVwList.reloadData()
-            let item = self.arrList[0]
-            self.count = 0
-            self.getLiveImagesWith(UUID: item.uuid)
+//            for bo in arrList
+//            {
+//                bo.arrLiveUrl.removeAll()
+//                bo.arrImages.removeAll()
+//            }
+//            self.clVwLive.reloadData()
+//            let item = self.arrList[0]
+//            self.countLive = 0
+//            self.getLiveImagesWith(UUID: item.uuid)
+            self.clVwLive.isHidden = false
 
         }
     }
@@ -105,125 +148,67 @@ class ViewController: BaseViewController {
                 let tempBO = listImageBO()
                 tempBO.strImage = response as! String
                 
-                self.arrList[self.count].arrImageUrl = [tempBO]
-                if self.count == self.arrList.count - 1
+                self.arrList[self.countLive].arrLiveUrl = [tempBO]
+                if self.countLive == self.arrList.count - 1
                 {
                     DispatchQueue.main.async {
-//                        self.clVwList.reloadItems(at: [IndexPath(item: self.count, section: 0)])
-                        self.clVwList.reloadData()
+                        self.clVwLive.reloadData()
                     }
 
                 }
                 else
                 {
-                    DispatchQueue.main.async {
-//                        self.clVwList.reloadItems(at: [IndexPath(item: self.count, section: 0)])
-                    }
-                    self.count = self.count + 1
-                    let item = self.arrList[self.count]
+                    self.countLive = self.countLive + 1
+                    let item = self.arrList[self.countLive]
                     self.getLiveImagesWith(UUID: item.uuid)
                 }
         }, failureMessage: { (error) in
-                if self.count == self.arrList.count - 1
+                if self.countLive == self.arrList.count - 1
                 {
                     DispatchQueue.main.async {
-                        self.clVwList.reloadData()
-//                        self.clVwList.reloadItems(at: [IndexPath(item: self.count, section: 0)])
+                        self.clVwLive.reloadData()
 
                     }
                 }
                 else
                 {
-                    DispatchQueue.main.async {
-//                        self.clVwList.reloadData()
-//                        self.clVwList.reloadItems(at: [IndexPath(item: self.count, section: 0)])
-
-                    }
-//                    self.clVwList.reloadData()
-                    self.count = self.count + 1
-                    let item = self.arrList[self.count]
+                    self.countLive = self.countLive + 1
+                    let item = self.arrList[self.countLive]
                     self.getLiveImagesWith(UUID: item.uuid)
                 }
         })
     }
 
-   /* func getLatestImages()
-    {
-        if self.arrList.count > 0
-        {
-            let item = self.arrList[0]
-            self.count = 0
-            self.getLatestImageWith(UUID: item.uuid)
-        }
-
-    }
-    func getLatestImageWith(UUID :String)
-    {
-        let layer = ServiceLayer()
-        layer.getLatestImageForList(strID: UUID, successMessage: { (response) in
-            
-            let tempBO = response as! listImageBO
-            self.arrList[self.count].arrImageUrl = [tempBO]
-            if self.count == self.arrList.count - 1
-            {
-
-            }
-            else
-            {
-                self.getFirstImage(Index: self.count)
-//                self.performSelector(inBackground: #selector(self.getFirstImage(Index:)), with: self.count)
-                self.count = self.count + 1
-                let item = self.arrList[self.count]
-                self.getLatestImageWith(UUID: item.uuid)
-            }
-        }, failureMessage: { (error) in
-            
-            if self.count == self.arrList.count - 1
-            {
-//                app_delegate.removeloder()
-//                DispatchQueue.main.async {
-//                    self.clVwList.reloadData()
-//                }
-            }
-            else
-            {
-                self.getFirstImage(Index: self.count)
-                self.count = self.count + 1
-                let item = self.arrList[self.count]
-                self.getImagesWith(UUID: item.uuid)
-            }
-        })
-    }*/
 
     @objc func getImagesWith(UUID :String)
     {
         let layer = ServiceLayer()
         layer.getImagesForList(strID: UUID, successMessage: { (response) in
-                self.arrList[self.count].arrImageUrl = response as! [listImageBO]
-                if self.count == self.arrList.count - 1
+                self.arrList[self.countLatest].arrImageUrl = response as! [listImageBO]
+                if self.countLatest == self.arrList.count - 1
                 {
-                    self.getFirstImage(Index: self.count)
+                    self.getFirstImage(Index: self.countLatest)
                 }
                 else
                 {
-                    self.getFirstImage(Index: self.count)
-                    self.count = self.count + 1
-                    let item = self.arrList[self.count]
+                    self.getFirstImage(Index: self.countLatest)
+                    self.countLatest = self.countLatest + 1
+                    let item = self.arrList[self.countLatest]
                     self.getImagesWith(UUID: item.uuid)
                 }
         }, failureMessage: { (error) in
             DispatchQueue.main.async {
                 
-                if self.count == self.arrList.count - 1
+                if self.countLatest == self.arrList.count - 1
                 {
-                    self.getFirstImage(Index: self.count)
+                    self.getFirstImage(Index: self.countLatest)
 
                 }
                 else
                 {
-                    self.getFirstImage(Index: self.count)
-                    self.count = self.count + 1
-                    let item = self.arrList[self.count]
+                    self.getFirstImage(Index: self.countLatest)
+                    self.countLatest = self.countLatest + 1
+                    let item = self.arrList[self.countLatest]
                     self.getImagesWith(UUID: item.uuid)
                 }
             }
@@ -244,7 +229,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        if isLive == true
+        if collectionView == clVwLive
         {
             let width = (ScreenWidth - 30)/2
             let height = (width * 0.95)
@@ -260,31 +245,29 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        if isLive == true
+        if collectionView == clVwLive
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LiveCollectionViewCell", for: indexPath) as! LiveCollectionViewCell
             let listBO = arrList[indexPath.row]
+            print("Name : \(listBO.device_name) , indexpath.row : \(indexPath.row)")
             cell.imgVwLive.image = UIImage()
-            if listBO.arrImageUrl.count > 0
+            if listBO.arrLiveUrl.count > 0
             {
                 if cell.streamingController != nil
                 {
                     cell.streamingController.stop()
                 }
-                var str = listBO.arrImageUrl[0].strImage.replacingOccurrences(of: "\"", with: "")
+                var str = listBO.arrLiveUrl[0].strImage.replacingOccurrences(of: "\"", with: "")
                 str = str.replacingOccurrences(of: "\\", with: "")
                 //addingPercentEscapes(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
-                print("live url : \(str)")
+                print("live url : \(str), indexpath.row : \(indexPath.row)")
                 let url = URL(string: str)!
-                
                 cell.streamingController = MjpegStreamingController(imageView: cell.imgVwLive)
                 cell.streamingController.didStartLoading = { [unowned self] in
                 }
                 cell.streamingController.didFinishLoading = { [unowned self] in
                     print("finished loading...")
                 }
-                
-//                cell.streamingController.contentURL = url
                 cell.streamingController.play(url: url)
                 
             }
@@ -339,45 +322,97 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
     }
     @objc func btnHistoryClicked(sender : UIButton)
     {
-        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
-        vc.listBO = arrList[sender.tag - 7000]
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        if isLive == true
+        {
+            app_delegate.showLoader(message: "loading...")
+            let layer = ServiceLayer()
+            layer.getLiveHDForList(strID: arrList[sender.tag - 7000].uuid, successMessage: { (response) in
+                DispatchQueue.main.async {
+                    app_delegate.removeloder()
+                    print(response)
+                    
+                    var str = (response as! String).replacingOccurrences(of: "\"", with: "")
+                    str = str.replacingOccurrences(of: "\\", with: "")
+                    
+                    let url = URL(string: str)
+                    if url != nil
+                    {
+                        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LiveHDViewController") as! LiveHDViewController
+                        vc.URL = url
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Alert!", message: "Url not found.", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
+                }
+            }) { (error) in
+                DispatchQueue.main.async {
+                    app_delegate.removeloder()
+                }
+                
+            }
+
+        }
+        else
+        {
+            let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
+            vc.listBO = arrList[sender.tag - 7000]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
 
     }
     @objc func btnLiveHDClicked(sender : UIButton)
     {
-        app_delegate.showLoader(message: "loading...")
-        let layer = ServiceLayer()
-        layer.getLiveHDForList(strID: arrList[sender.tag - 1000].uuid, successMessage: { (response) in
-            DispatchQueue.main.async {
-              app_delegate.removeloder()
-                print(response)
-                
-                var str = (response as! String).replacingOccurrences(of: "\"", with: "")
-                str = str.replacingOccurrences(of: "\\", with: "")
-
-                let url = URL(string: str)
-                if url != nil
-                {
-                    let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LiveHDViewController") as! LiveHDViewController
-                    vc.URL = url
-                    self.navigationController?.pushViewController(vc, animated: true)
+        
+        if isLive == true
+        {
+            app_delegate.showLoader(message: "loading...")
+            let layer = ServiceLayer()
+            layer.getLiveHDForList(strID: arrList[sender.tag - 1000].uuid, successMessage: { (response) in
+                DispatchQueue.main.async {
+                    app_delegate.removeloder()
+                    print(response)
+                    
+                    var str = (response as! String).replacingOccurrences(of: "\"", with: "")
+                    str = str.replacingOccurrences(of: "\\", with: "")
+                    
+                    let url = URL(string: str)
+                    if url != nil
+                    {
+                        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LiveHDViewController") as! LiveHDViewController
+                        vc.URL = url
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Alert!", message: "Url not found.", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
                 }
-                else
-                {
-                    let alert = UIAlertController(title: "Alert!", message: "Url not found.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-
+            }) { (error) in
+                DispatchQueue.main.async {
+                    app_delegate.removeloder()
                 }
                 
             }
-        }) { (error) in
-            DispatchQueue.main.async {
-                app_delegate.removeloder()
-            }
-
+            
         }
+        else
+        {
+            let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryViewController") as! HistoryViewController
+            vc.listBO = arrList[sender.tag - 1000]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     @objc func getFirstImage(Index : Int)
     {
@@ -422,7 +457,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
                                 DispatchQueue.main.async {
                                     if self.isLive == false
                                     {
-                                        self.clVwList.reloadData()
+                                        self.clVwLatest.reloadData()
                                     }
                                 }
                                 
@@ -434,13 +469,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource,U
                                     DispatchQueue.main.async {
                                         if self.isLive == false
                                         {
-                                            self.clVwList.reloadData()
+                                            self.clVwLatest.reloadData()
                                         }
                                     }
                                 }
-                            }                        }
-
-                        
+                            }
+                        }
                         //displaying the image
                         
                     } else {

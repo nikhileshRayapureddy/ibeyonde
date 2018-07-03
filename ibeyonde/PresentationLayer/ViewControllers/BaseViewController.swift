@@ -60,6 +60,43 @@ class BaseViewController: UIViewController {
         self.navigationItem.titleView = imgLogo
         
     }
+    
+    func designNavigationBarForHome()
+    {
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController!.navigationBar.isTranslucent = false
+        self.navigationController!.navigationBar.barTintColor = .black
+        let negativeSpacer = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        negativeSpacer.width = -12
+        
+        let btnMenu = UIButton(type: UIButtonType.custom)
+        btnMenu.frame = CGRect(x: 0, y: 0  , width: 44 , height: 44)
+        btnMenu.setImage(#imageLiteral(resourceName: "menu"), for: UIControlState.normal)
+        btnMenu.contentHorizontalAlignment = .left
+        btnMenu.addTarget(self, action: #selector(self.btnMenuClicked(sender:)), for: UIControlEvents.touchUpInside)
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: btnMenu)
+        self.navigationItem.leftBarButtonItems = [negativeSpacer,leftBarButtonItem]
+        
+
+        let btnRefresh = UIButton(type: UIButtonType.custom)
+        btnRefresh.frame = CGRect(x: 0, y: 0  , width: 44 , height: 44)
+        btnRefresh.setImage(#imageLiteral(resourceName: "reload"), for: UIControlState.normal)
+        btnRefresh.contentHorizontalAlignment = .right
+        btnRefresh.addTarget(self, action: #selector(self.btnRefreshClicked(sender:)), for: UIControlEvents.touchUpInside)
+        let rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: btnRefresh)
+        self.navigationItem.rightBarButtonItems = [negativeSpacer,rightBarButtonItem]
+
+        let imgLogo = UIImageView(frame: CGRect(x: 0, y: 11  , width: 100 , height: 22))
+        imgLogo.backgroundColor = UIColor.clear
+        imgLogo.contentMode = .scaleAspectFit
+        imgLogo.image = #imageLiteral(resourceName: "LogoNavBar")
+        self.navigationItem.titleView = imgLogo
+        
+    }
+    @objc func btnRefreshClicked(sender:UIButton)
+    {
+        
+    }
     @objc func btnBackClicked(sender : UIButton)
     {
         self.navigationController?.popViewController(animated: true)
